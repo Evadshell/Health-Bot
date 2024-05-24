@@ -1,4 +1,4 @@
-import { Box, Button, ChakraProvider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Link as ChakraLink, ChakraProvider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -6,19 +6,27 @@ function Home() {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/sign-up'); // Clerk's sign-up/sign-in page
+    navigate('/sign-up'); 
   };
 
   return (
     <ChakraProvider>
       <Box as="header" bg="#4b5d35" color="white" py={4}>
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
-          <Heading as="h1" size="lg">HealthBot</Heading>
+          <Link to="/">
+            <Image src="/logo-no-background.png" alt="HealthBot Logo" boxSize="80px" objectFit="contain" />
+          </Link>
           <nav>
             <Stack direction="row" spacing={4} fontSize="lg">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+              <ChakraLink as={Link} to="/" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                Home
+              </ChakraLink>
+              <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                About
+              </ChakraLink>
+              <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                Contact
+              </ChakraLink>
             </Stack>
           </nav>
         </Flex>
@@ -47,8 +55,12 @@ function Home() {
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
           <Text>&copy; {new Date().getFullYear()} HealthBot. All rights reserved.</Text>
           <Stack direction="row" spacing={4}>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+              About
+            </ChakraLink>
+            <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+              Contact
+            </ChakraLink>
           </Stack>
         </Flex>
       </Box>

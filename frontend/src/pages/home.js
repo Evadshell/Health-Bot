@@ -1,6 +1,6 @@
-import { Box, Button, ChakraProvider, Flex, Heading, Image, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, ChakraProvider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <ChakraProvider>
@@ -8,9 +8,11 @@ function Home() {
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
           <Heading as="h1" size="lg">HealthBot</Heading>
           <nav>
-            <Link px={2} href="#home">Home</Link>
-            <Link px={2} href="#about">About</Link>
-            <Link px={2} href="#contact">Contact</Link>
+          <Stack direction="row" spacing={4} fontSize="lg">
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
+            </Stack>
           </nav>
         </Flex>
       </Box>
@@ -38,8 +40,9 @@ function Home() {
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
           <Text>&copy; {new Date().getFullYear()} HealthBot. All rights reserved.</Text>
           <Stack direction="row" spacing={4}>
-            <Link href="#about">About</Link>
-            <Link href="#contact">Contact</Link>
+            {/* Use Link component for navigation */}
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
           </Stack>
         </Flex>
       </Box>

@@ -1,14 +1,21 @@
 import { Box, Button, ChakraProvider, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 function Home() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/sign-up'); // Clerk's sign-up/sign-in page
+  };
+
   return (
     <ChakraProvider>
       <Box as="header" bg="#4b5d35" color="white" py={4}>
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
           <Heading as="h1" size="lg">HealthBot</Heading>
           <nav>
-          <Stack direction="row" spacing={4} fontSize="lg">
+            <Stack direction="row" spacing={4} fontSize="lg">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
               <Link to="/contact">Contact</Link>
@@ -26,7 +33,7 @@ function Home() {
             <Text fontSize="xl" mb={6}>
               Breaking Barriers, Saving Lives: Our AI Chatbot Delivers Instant Medical Aid, Anywhere, Anytime!
             </Text>
-            <Button colorScheme="teal" size="lg" rightIcon={<FaHeart />}>
+            <Button colorScheme="teal" size="lg" rightIcon={<FaHeart />} onClick={handleGetStarted}>
               Get Started
             </Button>
           </Box>
@@ -40,7 +47,6 @@ function Home() {
         <Flex maxW="1200px" mx="auto" px={4} justify="space-between" align="center">
           <Text>&copy; {new Date().getFullYear()} HealthBot. All rights reserved.</Text>
           <Stack direction="row" spacing={4}>
-            {/* Use Link component for navigation */}
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
           </Stack>

@@ -22,7 +22,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/sign-up'); 
+    navigate('/Login'); 
   };
 
   return (
@@ -44,6 +44,12 @@ function Home() {
                 <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
                   Contact
                 </ChakraLink>
+                 <ChakraLink as={Link} to="/User" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  User
+                </ChakraLink> 
+                <ChakraLink as={Link} to="/services" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  services
+                </ChakraLink> 
               </Stack>
             </nav>
           </Flex>

@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Bmi from './components/BMI/Bmi';
 import CreateDiet from './components/Diet/CreateDiet';
 import Diet from './components/Diet/Diet';
+import Final from './components/Diet/Final';
 import Meal from './components/Diet/Meal';
 import MealList from './components/Diet/MealList';
 import About from './pages/about';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/createDiet" element={<CreateDiet />} /> 
           <Route path="/Meal" element={<Meal />} />
           <Route path="/MealList" element={<MealList />} />
+          <Route path="/Final" element={<Final />} />
         </Routes>
       </Router>
     </ChakraProvider>

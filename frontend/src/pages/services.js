@@ -1,20 +1,20 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
-    Box,
-    Button,
-    Link as ChakraLink,
-    ChakraProvider,
-    CSSReset,
-    extendTheme,
-    Flex,
-    Image,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuList,
-    Stack,
-    Text,
-    useColorModeValue
+  Box,
+  Button,
+  Link as ChakraLink,
+  ChakraProvider,
+  CSSReset,
+  extendTheme,
+  Flex,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Stack,
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -88,14 +88,13 @@ export default function Services() {
               </MenuButton>
               <MenuList>
                 <MenuItem>TherapyBot</MenuItem>
-                <MenuItem>Plan your Diet</MenuItem>
-                <MenuItem>Check your BMI</MenuItem>
+                <MenuItem as={Link} to="/Diet">Plan your Diet</MenuItem> {/* Navigate to Diet.js */}
+                <MenuItem as={Link} to="/Bmi">Check your BMI</MenuItem> {/* Navigate to Bmi.js */}
                 <MenuItem>ChatBot</MenuItem>
               </MenuList>
             </Menu>
           </Box>
         </Flex>
-       
       </Box>
     </ChakraProvider>
   );

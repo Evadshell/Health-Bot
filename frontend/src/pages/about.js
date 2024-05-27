@@ -27,17 +27,23 @@ function About() {
             <Image src="/logo-no-background.png" alt="HealthBot Logo" boxSize="80px" objectFit="contain" />
           </Link>
           <nav>
-            <Stack direction="row" spacing={4} fontSize="lg">
-              <ChakraLink as={Link} to="/" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                Home
-              </ChakraLink>
-              <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                About
-              </ChakraLink>
-              <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                Contact
-              </ChakraLink>
-            </Stack>
+          <Stack direction="row" spacing={4} fontSize="lg">
+                <ChakraLink as={Link} to="/" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  Home
+                </ChakraLink>
+                <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  About
+                </ChakraLink>
+                <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  Contact
+                </ChakraLink>
+                <ChakraLink as={Link} to="/user" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  User
+                </ChakraLink>
+                <ChakraLink as={Link} to="/services" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                  Services
+                </ChakraLink>
+              </Stack>
           </nav>
         </Container>
       </Box>

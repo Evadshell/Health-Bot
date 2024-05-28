@@ -20,11 +20,25 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import { BiMailSend } from 'react-icons/bi';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-export default function User(): JSX.Element {
+export default function User() {
+  const [imageUrl, setImageUrl] = useState('https://bit.ly/sage-adebayo');
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <ChakraProvider>
       <Box as="header" bg="#4b5d35" color="white" py={4}>
@@ -33,23 +47,23 @@ export default function User(): JSX.Element {
             <Image src="/logo-no-background.png" alt="HealthBot Logo" boxSize="80px" objectFit="contain" />
           </Link>
           <nav>
-          <Stack direction="row" spacing={4} fontSize="lg">
-                <ChakraLink as={Link} to="/" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                  Home
-                </ChakraLink>
-                <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                  About
-                </ChakraLink>
-                <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                  Contact
-                </ChakraLink>
-                <ChakraLink as={Link} to="/user" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                  User
-                </ChakraLink>
-                <ChakraLink as={Link} to="/services" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
-                  Services
-                </ChakraLink>
-              </Stack>
+            <Stack direction="row" spacing={4} fontSize="lg">
+              <ChakraLink as={Link} to="/" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                Home
+              </ChakraLink>
+              <ChakraLink as={Link} to="/about" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                About
+              </ChakraLink>
+              <ChakraLink as={Link} to="/contact" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                Contact
+              </ChakraLink>
+              <ChakraLink as={Link} to="/user" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                User
+              </ChakraLink>
+              <ChakraLink as={Link} to="/services" px={2} py={1} _hover={{ bg: "green.200", borderRadius: "md" }}>
+                Services
+              </ChakraLink>
+            </Stack>
           </nav>
         </Container>
       </Box>
@@ -74,7 +88,7 @@ export default function User(): JSX.Element {
             <FormLabel>User Icon</FormLabel>
             <Stack direction={['column', 'row']} spacing={6}>
               <Center>
-                <Avatar size="xl" src="https://bit.ly/sage-adebayo">
+                <Avatar size="xl" src={imageUrl}>
                   <AvatarBadge
                     as={IconButton}
                     size="sm"
@@ -87,7 +101,16 @@ export default function User(): JSX.Element {
                 </Avatar>
               </Center>
               <Center w="full">
-                <Button w="full">Change Icon</Button>
+                <Button w="full" onClick={() => document.getElementById('imageInput').click()}>
+                  Change Icon
+                </Button>
+                <Input
+                  id="imageInput"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  display="none"
+                />
               </Center>
             </Stack>
           </FormControl>
@@ -125,15 +148,17 @@ export default function User(): JSX.Element {
               }}>
               Cancel
             </Button>
-            <Button
-              bg={'blue.400'}
-              color={'white'}
-              w="full"
-              _hover={{
-                bg: 'blue.500',
-              }}>
-              Submit
-            </Button>
+            <Link to="/home">
+              <Button
+                bg={'blue.400'}
+                color={'white'}
+                w="full"
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+                Submit
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>

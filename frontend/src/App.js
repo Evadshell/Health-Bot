@@ -3,17 +3,21 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Bmi from './components/BMI/Bmi';
+
 import CreateDiet from './components/Diet/CreateDiet';
 import Diet from './components/Diet/Diet';
 import Final from './components/Diet/Final';
 import Meal from './components/Diet/Meal';
 import MealList from './components/Diet/MealList';
 import HealthBot from './components/Healthbot/Healthbot';
+import Login from './components/login';
+import Logout from './components/logout';
 import About from './pages/about';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import User from './pages/User';
+import Api from './services/Api';
 
 function App() {
   return (
@@ -24,6 +28,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HealthBot />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/api" element={<Api />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/user" element={<User />} />

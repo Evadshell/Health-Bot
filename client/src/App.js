@@ -9,15 +9,15 @@ import Diet from './components/Diet/Diet';
 import Final from './components/Diet/Final';
 import Meal from './components/Diet/Meal';
 import MealList from './components/Diet/MealList';
-import HealthBot from './components/Healthbot/Healthbot';
+import HealthBot from './components/healthbot/healthbot';
 import Login from './components/login';
 import Logout from './components/logout';
 import About from './pages/about';
 import Contact from './pages/Contact';
-import Home from './pages/Home';
-import Services from './pages/Services';
+import Home from './pages/home';
+import Services from './pages/services';
 import User from './pages/User';
-import Api from './services/Api';
+import Api from './services/api';
 
 function App() {
   return (

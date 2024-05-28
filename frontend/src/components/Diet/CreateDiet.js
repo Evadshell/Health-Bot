@@ -1,12 +1,12 @@
 import {
-    Box,
-    Button,
-    FormControl,
-    FormLabel,
-    Heading,
-    Input,
-    Select,
-    VStack
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Heading,
+  Input,
+  Select,
+  VStack
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
